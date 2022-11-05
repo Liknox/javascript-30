@@ -17,7 +17,7 @@ html {
 .item:last-child {
    border-bottom: 0;
 }
-input:checked ~ p {
+input:checked + p {
    background: #f9f9f9;
    text-decoration: line-through;
 }
