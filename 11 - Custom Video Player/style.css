@@ -42,13 +42,21 @@ body {
 .player__button {
    background: none;
    border: 0;
-   line-height: 1;
    color: white;
    text-align: center;
    outline: 0;
    padding: 0;
    cursor: pointer;
    max-width: 50px;
+}
+.skip {
+   font-size: 12px;
+}
+.fullScreen {
+   font-size: 18px;
+}
+.toggle {
+   font-size: 18px;
 }
 .player__button:focus {
    border-color: var(--base);
@@ -74,7 +82,7 @@ body {
    height: 15px;
 }
 .player__controls > * {
-   flex: 1;
+   flex: 0.8;
 }
 .progress {
    flex: 10;
@@ -90,7 +98,7 @@ body {
    width: 50%;
    background: var(--base);
    flex: 0;
-   flex-basis: 50%;
+   flex-basis: 0%;
 }
 input[type="range"] {
    -webkit-appearance: none;
