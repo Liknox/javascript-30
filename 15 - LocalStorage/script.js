@@ -36,8 +36,49 @@ function toggleDone(e) {
    localStorage.setItem("items", JSON.stringify(items))
    populateList(items, itemsList)
 }
+function reCheck() {
+   if (this.dataset.action === "unCheck") {
+      for (let i = 0; i < items.length; i++) {
+         items[i].done = false
+      }
+   } else {
+      for (let i = 0; i < items.length; i++) {
+         items[i].done = true
+      }
+   }
+   localStorage.setItem("items", JSON.stringify(items))
+   populateList(items, itemsList)
+}
+function clearItems() {
+   if (this.dataset.action === "clearLocally") {
+      while (items.length > 0) {
+         items.pop()
+      }
+      const span = document.querySelector("span")
+      span.style.opacity = 1
+      setTimeout(() => {
+      span.style.opacity = 0
+         
+      }, 1000);
+   } else {
+      while (items.length > 0) {
+         items.pop()
+      }
+      localStorage.setItem("items", JSON.stringify(items))
+   }
+   populateList(items, itemsList)
+}
 
 addItems.addEventListener("submit", addItem)
 itemsList.addEventListener("click", toggleDone)
 
 populateList(items, itemsList)
+
+const btnUnCheck = document.querySelector("[data-action=unCheck]")
+const btnCheck = document.querySelector("[data-action=check]")
+const btnClearLocally = document.querySelector("[data-action=clearLocally]")
+const btnClearFinally = document.querySelector("[data-action=clearFinally]")
+btnUnCheck.addEventListener("click", reCheck)
+btnCheck.addEventListener("click", reCheck)
+btnClearLocally.addEventListener("click", clearItems)
+btnClearFinally.addEventListener("click", clearItems)
