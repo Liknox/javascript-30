@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Speech Synthesis</title>
+      <link rel="stylesheet" href="style.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css" />
+   </head>
+   <body>
+      <div class="voiceinator">
+         <h1>The Voiceinator 5000</h1>
+         <select name="voice" id="voices">
+            <option value="">Select A Voice</option>
+         </select>
+         <label for="rate">Rate:</label>
+         <input name="rate" type="range" min="0" max="3" value="1" step="0.1" />
+         <label for="pitch">Pitch:</label>
+         <input name="pitch" type="range" min="0" max="2" step="0.1" />
+         <textarea name="text">Hello! I love JavaScript 👍</textarea>
+         <button data-action="stop">Stop!</button>
+         <button data-action="speak">Speak</button>
+      </div>
+      <script src="script.js"></script>
+   </body>
+</html>
